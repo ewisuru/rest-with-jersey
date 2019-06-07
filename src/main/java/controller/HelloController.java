@@ -8,9 +8,9 @@ import javax.ws.rs.PathParam;
 public class HelloController {
 
     @GET
-    @Path("/world")
-    public String sayHello(/*@PathParam("name") String name*/){
-        String name = "world";
-        return "Hello " + name;
+    @Path("/{name}")
+    public String sayHello(@PathParam("name") String name){
+        return "Hello " + name + this;
     }
+
 }
